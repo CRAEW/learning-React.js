@@ -26,7 +26,7 @@ class App extends Component {
         <div className="AppCards">
           <UserOutput userName={this.state.username}/>
 
-          <UserOutput userName={"CRAEW"}/>
+          <UserOutput userName="CRAEW"/>
         </div>
         
  
