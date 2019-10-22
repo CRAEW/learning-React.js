@@ -13,15 +13,22 @@ class App extends Component {
     this.setState({text: event.target.value });
   }
 
+  deleteCharHandler = (index) => {
+    const textArray = this.state.text.split('');
+    textArray.splice(index, 1);
+    const newText = textArray.join('');
+    this.setState({text: newText});
+  }
+
 
   render() {
-    const textArray = this.state.text.split('');
-    const textLength = textArray.length;
-
-    const charList = textArray.map((char, index) => {
+    const charArray = this.state.text.split('');
+    const textLength = charArray.length;
+    const charList = charArray.map((char, index) => {
       return <CharComponent 
         character={char}
         key={index}
+        clicked={() => this.deleteCharHandler(index)}
         />
     });
 
@@ -34,7 +41,6 @@ class App extends Component {
           value={this.state.text}
         />
         <p>{this.state.text}</p>
-        {/* <p>Lenght of text: {textLength}</p> */}
         <ValidationComponent textLength={textLength} />
         {charList}
 
@@ -47,7 +53,7 @@ class App extends Component {
             <li className="done">Inside the ValidationComponent, either output "Text too short" or "Text long enough" depending on the text length (e.g. take 5 as a minimum length)</li>
             <li className="done">Create another component (=> CharComponent) and style it as an inline box (=> display: inline-block, padding: 16px, text-align: center, margin: 16px, border: 1px solid black).</li>
             <li className="done">Render a list of CharComponents where each CharComponent receives a different letter of the entered text (in the initial input field) as a prop.</li>
-            <li>When you click a CharComponent, it should be removed from the entered text.</li>
+            <li className="done">When you click a CharComponent, it should be removed from the entered text.</li>
           </ol>
         </div>
       </div>
