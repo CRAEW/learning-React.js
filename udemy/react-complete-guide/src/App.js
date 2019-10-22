@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import styles from './App.module.css';
 // import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 
@@ -95,7 +95,7 @@ class App extends Component {
       // JSX
       // Radium media query special wrapper
       /*<StyleRoot>*/
-        <div className="App">
+        <div className={styles.App}>
           <h1>Hi, I'm a React App</h1>
           <p className={classes.join(' ')} >This is really working!</p>
           <button 
