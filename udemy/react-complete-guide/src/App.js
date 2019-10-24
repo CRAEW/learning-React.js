@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './App.module.css';
+import styles from './App.modules.css';
 // import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 
@@ -83,12 +83,12 @@ class App extends Component {
       }*/
     }
 
-    let classes = [];
+    const assignedClasses = [];
     if (this.state.persons.length <= 2) {
-      classes.push('red');
+      assignedClasses.push(styles.red);
     }
     if (this.state.persons.length <= 1) {
-      classes.push('bold');
+      assignedClasses.push(styles.bold);
     }
 
     return (
@@ -97,7 +97,7 @@ class App extends Component {
       /*<StyleRoot>*/
         <div className={styles.App}>
           <h1>Hi, I'm a React App</h1>
-          <p className={classes.join(' ')} >This is really working!</p>
+          <p className={assignedClasses.join(' ')} >This is really working!</p>
           <button 
             style={style}
             onClick={this.togglePersonsHandler}>Toggle persons</button>
