@@ -1,5 +1,5 @@
 import React from "react";
-// import Radium from 'radium'; //
+// import Radium from 'radium'; // use radium styling tools
 // import "./Person.css"; // import a regular stylesheet
 import styles from "./Person.modules.css"; //Import css modules stylesheet as styles
 
