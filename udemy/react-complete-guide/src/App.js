@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './App.modules.css';
 // import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 
 class App extends Component {
