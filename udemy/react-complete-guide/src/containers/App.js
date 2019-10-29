@@ -15,8 +15,22 @@ class App extends Component {
     return state;
   }
 
+  // ComponentWillMount() {
+  //   console.log('[App.js] componentWillMount');
+  // }
+
   componentDidMount() {
     console.log('[App.js] componentdidMount');
+  }
+
+  shouldComponentUpdate() {
+    console.log('[App.js] shouldComponentUpdate');
+    return true;
+    // return false; // toggle will not work, will stop before render
+  }
+
+  componentDidUpdate() {
+    console.log('[App.js] componentDidUpdate');
   }
 
   state = {
