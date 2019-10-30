@@ -2,7 +2,8 @@ import React, {Component, Fragment} from "react";
 // import Radium from 'radium'; // use radium styling tools
 // import "./Person.css"; // import a regular stylesheet
 import Aux from "../../../hoc/Aux";
-import styles from "./Person.modules.css"; //Import css modules stylesheet as styles
+import withClass from "../../../hoc/withClass";
+import classes from "./Person.modules.css"; //Import css modules stylesheet as styles
 
 class Person  extends Component {
 	render () {
@@ -16,7 +17,7 @@ class Person  extends Component {
 						key="i3"
 						type="text" 
 						onChange={this.props.changed} 
-						value={this.props.value}/>
+						value={this.props.name}/>
 				</Aux>
 			);
 	}
@@ -24,4 +25,4 @@ class Person  extends Component {
 };
 
 // export default Radium(person);
-export default Person;
+export default withClass(Person, classes.Person);
