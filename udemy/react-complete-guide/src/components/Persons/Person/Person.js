@@ -10,8 +10,8 @@ class Person  extends Component {
 			return (
 				// <React.Fragment> does the same as the <Aux> component
 				<Aux> 
-					<p key="i1" onClick={this.props.click}>I"m {this.props.name} and I am {this.props.age} years old!</p>,
-					<p key="i2" >{this.props.children}</p>,
+					<p key="i1" onClick={this.props.click}>I"m {this.props.name} and I am {this.props.age} years old!</p>
+					<p key="i2" >{this.props.children}</p>
 					<input 
 						key="i3"
 						type="text" 
