@@ -44,7 +44,8 @@ class App extends Component {
     ],
     otherState: 'some other value',
     showPersons: false,
-    showCockpit: true
+    showCockpit: true,
+    changeCounter: 0
   }
 
   deletePersonHandler = (personIndex) => {
@@ -68,8 +69,14 @@ class App extends Component {
     const persons = [...this.state.persons];
     persons[personIndex] = person;
 
-    this.setState({persons: persons});
-  }
+    // update state, when depending on oldstate
+    this.setState((prevState, props) => {
+      return {
+        persons: persons,
+        changeCounter: prevState.changeCounter + 1
+      };
+    });
+  };
 
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
