@@ -1,4 +1,6 @@
 import React, {Component, Fragment} from "react";
+import PropTypes from 'prop-types';
+
 // import Radium from 'radium'; // use radium styling tools
 // import "./Person.css"; // import a regular stylesheet
 import Aux from "../../../hoc/Aux";
@@ -22,6 +24,13 @@ class Person  extends Component {
 			);
 	}
 	
+};
+
+Person.propTypes = {
+	click: PropTypes.func,
+	name: PropTypes.string,
+	age: PropTypes.number,
+	changes: PropTypes.func
 };
 
 // export default Radium(person);
