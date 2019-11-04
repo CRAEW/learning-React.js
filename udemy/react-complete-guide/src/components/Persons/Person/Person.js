@@ -22,7 +22,8 @@ class Person  extends Component {
 		console.log('[Person.js] rendering...');
 			return (
 				// <React.Fragment> does the same as the <Aux> component
-				<Aux> 
+				<Aux>
+					{this.props.isAuth ? <p>Authenticated!</p> : <p>Please log in</p>}
 					<p key="i1" onClick={this.props.click}>I"m {this.props.name} and I am {this.props.age} years old!</p>
 					<p key="i2" >{this.props.children}</p>
 					<input 
